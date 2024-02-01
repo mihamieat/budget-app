@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
 """Module related to the output display."""
+
+
 def display_category_total(category_name: str, ledger: list, total: int):
     """Generates a formatted text representation of a category's ledger.
 

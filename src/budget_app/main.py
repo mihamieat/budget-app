@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 """Main module for the app."""
-import budget
-from budget import create_spend_chart
+from budget_app import budget
+from budget_app.budget import create_spend_chart
 
 food = budget.Category("Food")
 food.deposit(1000, "initial deposit")

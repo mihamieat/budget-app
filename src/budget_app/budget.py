@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Module contains category object."""
 from budget_app.total import display_category_total
 from budget_app.chart import create_spend_chart_display

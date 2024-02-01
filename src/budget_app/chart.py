@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 """Chart display module."""
+
+
 def create_spend_chart_display(categories: list = None):
-    """The chart shows the percentage spent in each category passed in to the function.
-    """
+    """The chart shows the percentage spent in each category passed in to the function."""
     if categories is None:
         categories = []
     categories_list = []
@@ -15,14 +17,15 @@ def create_spend_chart_display(categories: list = None):
 
 
 def get_percentage(category_amount: float, categories_total: float):
-    """Calculates the percentage of a category's amount relative to the total amount of all categories.
+    """Calculates the percentage of a category's amount relative
+    to the total amount of all categories.
 
-    Args:
-        category_amount (float): The amount of the category.
-        categories_total (float): The total amount of all categories.
+        Args:
+            category_amount (float): The amount of the category.
+            categories_total (float): The total amount of all categories.
 
-    Returns:
-        int: The percentage value rounded to the nearest multiple of 10.
+        Returns:
+            int: The percentage value rounded to the nearest multiple of 10.
     """
     return round(category_amount * 10 / categories_total) * 10
 
@@ -38,7 +41,7 @@ def bar_chart(categories_list):
             else:
                 line.append(" ")
             o_lines.append(line)
-    
+
     for line in o_lines:
         y_axis = f"{line[0]}| "
         o_s = "  ".join(line[1:])
