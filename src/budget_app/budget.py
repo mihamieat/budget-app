@@ -37,11 +37,11 @@ class Category:
         """Withdraw money and add operation to ledger.
         Returns fals if money is not enough.
         """
-        withdraw = {"amount": -amount, "description": description}
-
-        self.ledger.append(withdraw)
-
-        return self.check_funds(amount)
+        available = self.check_funds(amount)
+        if available:
+            withdraw = {"amount": -amount, "description": description}
+            self.ledger.append(withdraw)
+        return available
 
     def get_balance(self):
         """Returns the current balance."""
