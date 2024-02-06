@@ -47,6 +47,12 @@ class Category:
         """Returns the current balance."""
         return sum(operation["amount"] for operation in self.ledger)
 
+    def get_spent(self):
+        """Returns the total amount spent."""
+        return -sum(
+            operation["amount"] for operation in self.ledger if operation["amount"] < 0
+        )
+
     def transfer(self, amount: float, category_obj):
         """Transfers a specified amount from the current category to the specified category.
 
@@ -81,4 +87,4 @@ class Category:
 
 def create_spend_chart(categories: list):
     """Display chart"""
-    create_spend_chart_display(categories)
+    return create_spend_chart_display(categories)
